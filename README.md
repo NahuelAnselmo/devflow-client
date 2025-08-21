@@ -1,69 +1,135 @@
-# React + TypeScript + Vite
+🛒 E-Commerce Frontend
+📌 Descripción
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-Commerce Frontend es la interfaz de usuario para el sistema de tienda online La Old School 23. Está diseñado con React + Vite, ofreciendo un entorno rápido, modular y fácil de escalar.
 
-Currently, two official plugins are available:
+Este proyecto consume la API del backend 👉 Repositorio Backend: https://github.com/NahuelAnselmo/devflow-server
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Características Principales
 
-## Expanding the ESLint configuration
+Autenticación de usuarios (login / registro).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Listado de productos dinámico consumido desde la API.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Carrito de compras con persistencia local.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Checkout de pedidos conectado al backend.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Gestión de usuarios (perfil, historial de pedidos).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Responsive Design para PC, tablet y mobile.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Componentes reutilizables con enfoque modular.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+🛠️ Tecnologías
+
+React + Vite (base del proyecto).
+
+React Router (navegación).
+
+Axios / Fetch (consumo de API).
+
+TailwindCSS (estilos rápidos y modernos).
+
+Context API o Redux (gestión de estado global).
+
+Framer Motion (animaciones).
+
+## 📂 Estructura del Proyecto
+
+```bash
+📦 ecommerce-frontend
+ ┣ 📂 public        # Archivos estáticos (imágenes, favicon, etc.)
+ ┣ 📂 src
+ ┃ ┣ 📂 assets      # Recursos estáticos (CSS, imágenes locales)
+ ┃ ┣ 📂 components  # Componentes reutilizables (botones, cards, etc.)
+ ┃ ┣ 📂 hooks       # Custom Hooks
+ ┃ ┣ 📂 pages       # Páginas de la aplicación (Home, Login, Products, etc.)
+ ┃ ┣ 📂 routes      # Configuración de rutas con React Router
+ ┃ ┣ 📂 services    # Llamadas a la API (fetch/axios)
+ ┃ ┣ 📂 store       # Estado global (Redux/Zustand/Context)
+ ┃ ┣ 📂 utils       # Funciones auxiliares
+ ┃ ┣ 📜 App.jsx     # Componente raíz
+ ┃ ┗ 📜 main.jsx    # Punto de entrada de React
+ ┣ 📜 .env.example  # Variables de entorno de ejemplo
+ ┣ 📜 index.html    # HTML base
+ ┣ 📜 package.json
+ ┗ 📜 README.md
+
+
+⚙️ Requisitos Previos
+
+Antes de instalar y ejecutar el proyecto, asegurate de tener:
+
+Node.js (v16 o superior).
+
+Git instalado.
+
+Visual Studio Code u otro editor.
+
+📥 Instalación
+
+Clonar el repositorio:
+
+git clone https://github.com/NahuelAnselmo/devflow-client.git
+cd TU_REPO_FRONT
+
+
+Instalar dependencias:
+
+npm install
+
+
+Crear archivo .env en la raíz del proyecto con la URL del backend:
+
+VITE_API_URL=http://localhost:3000/api
+
+
+Iniciar el servidor en modo desarrollo:
+
+npm run dev
+
+📡 Rutas principales
+
+/ → Home con listado de productos.
+
+/login → Iniciar sesión.
+
+/register → Crear cuenta.
+
+/cart → Carrito de compras.
+
+/checkout → Finalizar compra.
+
+/profile → Perfil del usuario.
+
+🧪 Testing
+
+Para testear la app recomendamos:
+
+Jest + React Testing Library (unit tests).
+
+Cypress (tests end-to-end).
+
+🚀 Despliegue
+
+El frontend puede desplegarse en:
+
+Vercel
+
+Netlify
+
+GitHub Pages
+
+Asegúrate de configurar VITE_API_URL con la URL de producción del backend.
+
+📜 Licencia
+
+Este proyecto está bajo licencia MIT.
+
+👥 Equipo
+
+Desarrollado por:
+
+° Nahuel Anselmo
 ```
